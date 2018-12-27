@@ -12,7 +12,7 @@ function getImageBuffer(){
 
 function displayImageBuffer(img){
 
-	let buf = new Buffer(width * height/2);
+	let buf = new Buffer.alloc(width * height/2);
 	for(let y = 0; y < height; y++) { 
 		for(let  x = 0; x<width-1; x+=2){
 			let pixel_0 = img.getPixel(x, y);
@@ -51,6 +51,7 @@ function displayImageBuffer(img){
 exports.getImageBuffer = getImageBuffer;
 exports.displayImageBuffer = displayImageBuffer;
 exports.init = epd7x5.init;
+exports.sleep = epd7x5.sleep;
 exports.white = 32;
 exports.red = 128;
 exports.black = 224;	
